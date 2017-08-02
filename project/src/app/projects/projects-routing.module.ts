@@ -10,7 +10,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: ProjectsComponent,
+    component: ProjectListComponent,
+    // component: ProjectsComponent,
     children: [
       {
         path: '',
@@ -28,6 +29,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  //  declarations: [ProjectListComponent]
 })
 export class ProjectsRoutingModule { }
 

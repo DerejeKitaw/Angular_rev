@@ -6,18 +6,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 
-const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'projects', },
-  
+const ROUTES: Routes = [
   { path: 'projects', loadChildren: 'app/projects/projects.module#ProjectsModule' },
   { path: 'pvdesign', loadChildren: 'app/pvdesign/pvdesign.module#PvdesignModule' },
+  { path: '', pathMatch: 'full', redirectTo: 'projects', },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ preloadingStrategy: PreloadAllModules })
+  imports: [RouterModule.forRoot(ROUTES,{ preloadingStrategy: PreloadAllModules })
     // CommonModule
   ],
   exports: [RouterModule],
